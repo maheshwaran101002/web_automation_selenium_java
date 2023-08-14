@@ -15,8 +15,9 @@ public class Webautomation {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 		driver.get("https://www.amazon.in/ap/signin?openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.in%2F%3Fref_%3Dnav_signin&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=inflex&openid.mode=checkid_setup&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0");
-  int product = 0;
-	while(product == 0){	
+  		int count=1;
+		int requirement = 5;  //enter the product requirements
+	while(requirement >= count){	
 	////username
 		
 			WebElement username = driver.findElement(By.id("ap_email"));
@@ -89,6 +90,8 @@ public class Webautomation {
 					proceedtobuy.isDisplayed();
 					proceedtobuy.isEnabled();
 					proceedtobuy.click();
+
+		count++;
   }
 }
 }
